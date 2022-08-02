@@ -31,28 +31,26 @@
                         <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
                     </tr>
                 </thead>
-                <tbody>
-                <c:forEach var="boardList" items="${boardList}">
-                    <tr onclick="location.href='/post/${boardList.id}'">
-                        <td>글 제목</td>
-                        <td colspan="3">${boardList.title}</td>
-                        <td>조회수</td>
-                        <td>${boardList.cnt}</td>
-                    </tr>
-                    <tr>
-                        <td>작성자</td>
-                        <td>${boardList.author}</td>
-                        <td >생성일시</td>
-                        <td>${boardList.insert_time}</td>
-                        <td >수정일자</td>
-                        <td>${boardList.update_time}</td>
-                    </tr>
-                    <tr>
-                        <td>글 내용</td>
-                        <td colspan="5"  style="height: 400px";>${boardList.context}</td>
-                    </tr>
-                </c:forEach>
-                </tbody>
+                    <tbody>
+                        <tr>
+                            <td>글 제목</td>
+                            <td colspan="3">${postDetail.title}</td>
+                            <td>조회수</td>
+                            <td>${postDetail.cnt}</td>
+                        </tr>
+                        <tr>
+                            <td>작성자</td>
+                            <td>${postDetail.author}</td>
+                            <td >생성일시</td>
+                            <td>${postDetail.insert_time}</td>
+                            <td >수정일자</td>
+                            <td>${postDetail.update_time}</td>
+                        </tr>
+                        <tr>
+                            <td>글 내용</td>
+                            <td colspan="5" style="height: 400px";>${postDetail.context}</td>
+                        </tr>
+                    </tbody>
             </table>
             <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
             <button type="button" class="btn btn-success" onclick="location.href='/edit';"> 수정 </button>

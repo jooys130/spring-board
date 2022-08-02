@@ -35,7 +35,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <button id="btnWrite" onclick="location.href='EditPost'" type="button" class="btn btn-default navbar-btn">글 작성</button>
+                    <button id="btnWrite" onclick="location.href='edit'" type="button" class="btn btn-default navbar-btn">글 작성</button>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -55,7 +55,7 @@
 
         <tbody>
         <c:forEach items="${boardList}" var="boardList">
-            <tr>
+            <tr onclick="location.href='post/${boardList.id}'">
                 <th scope="row">${boardList.id}</th>
                 <td>${boardList.title}</td>
                 <td>${boardList.author}</td>

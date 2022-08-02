@@ -5,7 +5,9 @@ import com.bd.spring_board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -22,10 +24,10 @@ public class BoardController {
         return "BoardList";
     }
 
-    @RequestMapping("/post") // 이 주소로 접속하면 이 메소드를 호출한다.
-    public String openPost(Model model) throws Exception {
-        List<BoardDto> boardList = boardService.selectBoardList(); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
-        model.addAttribute("boardList", boardList);
+    @RequestMapping("/post/{id}") // 이 주소로 접속하면 이 메소드를 호출한다.
+    public String openPost(@PathVariable int id, Model model) throws Exception {
+        BoardDto postDetail = boardService.postDetail(id);
+        model.addAttribute("postDetail", postDetail);
 
         return "Post";
     }
