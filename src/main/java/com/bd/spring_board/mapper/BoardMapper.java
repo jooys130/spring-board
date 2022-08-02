@@ -7,5 +7,7 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     List<BoardDto> selectBoardList() throws Exception;
+
+    BoardDto postDetail(int id) throws Exception;
 }
 

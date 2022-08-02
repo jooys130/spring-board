@@ -13,4 +13,8 @@ public class BoardService {
     public List<BoardDto> selectBoardList() throws Exception {
         return boardMapper.selectBoardList();
     }
+
+    public BoardDto postDetail(int id) throws Exception {
+        return boardMapper.postDetail(id);
+    }
 }

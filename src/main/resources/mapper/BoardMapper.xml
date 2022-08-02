@@ -6,4 +6,8 @@
     <select id="selectBoardList" resultType="com.bd.spring_board.model.BoardDto">
         SELECT * FROM board
     </select>
+
+    <select id="postDetail" parameterType="int" resultType="com.bd.spring_board.model.BoardDto">
+        SELECT * FROM board WHERE id = #{id}
+    </select>
 </mapper>
