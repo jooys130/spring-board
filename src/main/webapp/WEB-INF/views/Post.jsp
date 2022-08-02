@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <!-- To ensure proper rendering and touch zooming-->
@@ -27,28 +28,30 @@
             <table class="table table-hover" style="border : 1px solid #dddddd;">
                 <thead>
                     <tr>
-                        <th colspan="6" style="background-color: #eeeeee; text-align: center">게시판 내용</th>
+                        <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <c:forEach var="boardList" items="${boardList}">
+                    <tr onclick="location.href='/post/${boardList.id}'">
                         <td>글 제목</td>
-                        <td colspan="3">Post Title</td>
+                        <td colspan="3">${boardList.title}</td>
                         <td>조회수</td>
-                        <td>0</td>
+                        <td>${boardList.cnt}</td>
                     </tr>
                     <tr>
                         <td>작성자</td>
-                        <td>admin</td>
+                        <td>${boardList.author}</td>
                         <td >생성일시</td>
-                        <td>2022-08-01 15:42:58</td>
+                        <td>${boardList.insert_time}</td>
                         <td >수정일자</td>
-                        <td>2022-08-01 15:55:58</td>
+                        <td>${boardList.update_time}</td>
                     </tr>
                     <tr>
                         <td>글 내용</td>
-                        <td colspan="5"  style="height: 400px";>Post Content</td>
+                        <td colspan="5"  style="height: 400px";>${boardList.context}</td>
                     </tr>
+                </c:forEach>
                 </tbody>
             </table>
             <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
