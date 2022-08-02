@@ -39,4 +39,10 @@ public class BoardController {
 
         return "EditPost";
     }
+
+    @RequestMapping("/create") // 이 주소로 접속하면 이 메소드를 호출한다.
+    public String createPost(Model model) throws Exception {
+
+        return "NewPost";
+    }
 }
