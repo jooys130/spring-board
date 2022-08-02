@@ -25,7 +25,7 @@
     <h1>게시판</h1>
 </header>
 
-<div id="wrapper">
+<div id="wrapper" class="container">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -72,10 +72,12 @@
 </html>
 <style>
     header {
+        margin: 5px 50px 0px 50px;
         font-family: 'IBM Plex Sans KR', sans-serif;
         font-weight: 700;
     }
     #wrapper {
+        margin-top: 20px;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
 </style>
