@@ -21,4 +21,20 @@ public class BoardController {
 
         return "BoardList";
     }
+
+    @RequestMapping("/post") // 이 주소로 접속하면 이 메소드를 호출한다.
+    public String openPost(Model model) throws Exception {
+        List<BoardDto> boardList = boardService.selectBoardList(); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
+        model.addAttribute("boardList", boardList);
+
+        return "Post";
+    }
+
+    @RequestMapping("/edit") // 이 주소로 접속하면 이 메소드를 호출한다.
+    public String editPost(Model model) throws Exception {
+        List<BoardDto> boardList = boardService.selectBoardList(); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
+        model.addAttribute("boardList", boardList);
+
+        return "EditPost";
+    }
 }
