@@ -10,21 +10,74 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Free goggle Korean fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <title>BoardList</title>
 </head>
 <body>
-<tbody>
-<c:forEach items="${boardList}" var="boardList">
-    <tr>
-        <th scope="row">${boardList.id}</th>
-        <td>${boardList.title}</td>
-        <td>${boardList.context}</td>
-        <td>${boardList.author}</td>
-        <td>${boardList.insert_time}</td>
-        <td>${boardList.update_time}</td>
-        <td>${boardList.cnt}</td>
-    </tr>
-</c:forEach>
-</tbody>
+<header>
+    <h1>게시판</h1>
+</header>
+
+<div id="wrapper" class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">목록</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <button id="btnWrite" onclick="location.href='EditPost'" type="button" class="btn btn-default navbar-btn">글 작성</button>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+            <th scope="col">생성일자</th>
+            <th scope="col">수정일자</th>
+            <th scope="col">조회수</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach items="${boardList}" var="boardList">
+            <tr>
+                <th scope="row">${boardList.id}</th>
+                <td>${boardList.title}</td>
+                <td>${boardList.author}</td>
+                <td>${boardList.insert_time}</td>
+                <td>${boardList.update_time}</td>
+                <td>${boardList.cnt}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>
+<style>
+    header {
+        margin: 5px 50px 0px 50px;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-weight: 700;
+    }
+    #wrapper {
+        margin-top: 20px;
+        font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+</style>
