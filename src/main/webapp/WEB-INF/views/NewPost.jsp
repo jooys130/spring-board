@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: BD
-  Date: 2022-08-01
-  Time: 오후 3:09
+  Date: 2022-08-02
+  Time: 오후 4:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <!-- To ensure proper rendering and touch zooming-->
@@ -17,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <title>Edit</title>
+    <title>NewPost</title>
     <style>
         header {
             margin: 5px 50px 0px 50px;
@@ -45,32 +44,20 @@
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
-                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
+                <th colspan="2" style="background-color: #eeeeee; text-align: center">게시글 생성</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="boardList" items="${boardList}">
                 <tr>
                     <td>글 제목</td>
-                    <td colspan="3"><input style="width:100%; border:0;" value="${boardList.title}"></td>
-                    <td>조회수</td>
-                    <td>${boardList.cnt}</td>
-                </tr>
-                <tr>
-                    <td>작성자</td>
-                    <td>${boardList.author}</td>
-                    <td >생성일시</td>
-                    <td>${boardList.insert_time}</td>
-                    <td >수정일자</td>
-                    <td>${boardList.update_time}</td>
+                    <td><input placeholder="제목을 입력하세요." style="width:100%; border:0;"></td>
                 </tr>
                 <tr>
                     <td>글 내용</td>
-                    <td colspan="5"  style="height: 400px";>
-                        <textarea rows="20" style="width:100%; border:0; resize: none;">${boardList.context}</textarea>
+                    <td style="height: 400px";>
+                        <textarea placeholder="내용을 입력하세요." rows="20" style="width:100%; border:0; resize: none;"></textarea>
                     </td>
                 </tr>
-            </c:forEach>
             </tbody>
         </table>
         <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
