@@ -19,6 +19,9 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>게시판</h1>
+    </header>
     <div class="container">
         <div class="row">
             <table class="table table-hover" style="border : 1px solid #dddddd;">
