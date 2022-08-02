@@ -55,7 +55,7 @@
 
         <tbody>
         <c:forEach items="${boardList}" var="boardList">
-            <tr>
+            <tr onclick="location.href='post/${boardList.id}'">
                 <th scope="row">${boardList.id}</th>
                 <td>${boardList.title}</td>
                 <td>${boardList.author}</td>
