@@ -8,6 +8,6 @@ import java.util.List;
 public interface BoardMapper {
     List<BoardDto> selectBoardList() throws Exception;
 
-    BoardDto postDetail(int id) throws Exception;
+    BoardDto selectPostDetail(int id) throws Exception;
 }
 
