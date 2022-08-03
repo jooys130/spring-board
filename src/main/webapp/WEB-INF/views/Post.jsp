@@ -67,8 +67,10 @@
                     </tbody>
             </table>
             <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
-            <button type="button" class="btn btn-success" onclick="location.href='/edit';"> 수정 </button>
-            <button type="button" class="btn btn-danger"> 삭제 </button>
+            <div class="pull-right">
+                <button type="button" class="btn btn-success" onclick="location.href='/edit';"> 수정 </button>
+                <button type="button" class="btn btn-danger"> 삭제 </button>
+            </div>
         </div>
     </div>
 </body>

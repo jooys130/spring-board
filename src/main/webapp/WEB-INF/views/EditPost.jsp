@@ -73,8 +73,10 @@
             </c:forEach>
             </tbody>
         </table>
-        <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
-        <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
+            <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+        </div>
     </form>
 </div>
 </body>
