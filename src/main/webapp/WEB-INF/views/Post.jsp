@@ -34,42 +34,42 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>게시판</h1>
-    </header>
-    <div class="container">
-        <table class="table table-hover" style="border : 1px solid #dddddd;">
-            <thead>
+<header>
+    <h1>게시판</h1>
+</header>
+<div id="wrapper" class="container">
+    <table class="table table-hover" style="border : 1px solid #dddddd;">
+        <thead>
+            <tr>
+                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
+            </tr>
+        </thead>
+            <tbody>
                 <tr>
-                    <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
+                    <td>글 제목</td>
+                    <td colspan="3">${postDetail.title}</td>
+                    <td>조회수</td>
+                    <td>${postDetail.cnt}</td>
                 </tr>
-            </thead>
-                <tbody>
-                    <tr>
-                        <td>글 제목</td>
-                        <td colspan="3">${postDetail.title}</td>
-                        <td>조회수</td>
-                        <td>${postDetail.cnt}</td>
-                    </tr>
-                    <tr>
-                        <td>작성자</td>
-                        <td>${postDetail.author}</td>
-                        <td >생성일시</td>
-                        <td>${postDetail.insert_time}</td>
-                        <td >수정일자</td>
-                        <td>${postDetail.update_time}</td>
-                    </tr>
-                    <tr>
-                        <td>글 내용</td>
-                        <td colspan="5" style="height: 400px";>${postDetail.context}</td>
-                    </tr>
-                </tbody>
-        </table>
-        <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
-        <div class="pull-right">
-            <button type="button" class="btn btn-success" onclick="location.href='/edit/${postDetail.id}'"> 수정 </button>
-            <button type="button" class="btn btn-danger"> 삭제 </button>
-        </div>
-    </div>
+                <tr>
+                    <td>작성자</td>
+                    <td>${postDetail.author}</td>
+                    <td >생성일시</td>
+                    <td>${postDetail.insert_time}</td>
+                    <td >수정일자</td>
+                    <td>${postDetail.update_time}</td>
+                </tr>
+                <tr>
+                    <td>글 내용</td>
+                    <td colspan="5" style="height: 400px";>${postDetail.context}</td>
+                </tr>
+            </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
+    <div class="pull-right">
+        <button type="button" class="btn btn-success" onclick="location.href='/edit/${postDetail.id}'"> 수정 </button>
+        <button type="button" class="btn btn-danger"> 삭제 </button>
+    </div><!-- /.pull-right -->
+</div><!-- /.wrapper -->
 </body>
 </html>

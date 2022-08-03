@@ -40,12 +40,12 @@
 <header>
     <h1>게시판</h1>
 </header>
-<div class="container">
+<div id="wrapper" class="container">
     <form action="" method="post">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
-                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
+                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 수정</th>
             </tr>
             </thead>
             <tbody>
@@ -74,8 +74,8 @@
         <div class="pull-right">
             <button type="submit" class="btn btn-primary active" onclick="location.href='/post/${editDetail.id}';"> 저장 </button>
             <button type="button" class="btn btn-default active" onclick="location.href='/post/${editDetail.id}';"> 취소 </button>
-        </div>
+        </div><!-- /.pull-right -->
     </form>
-</div>
+</div><!-- /.wrapper -->
 </body>
 </html>
