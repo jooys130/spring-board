@@ -39,7 +39,7 @@
 <header>
     <h1>게시판</h1>
 </header>
-<div class="container">
+<div id="wrapper" class="container">
     <form action="" method="post">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
@@ -60,9 +60,11 @@
                 </tr>
             </tbody>
         </table>
-        <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
-        <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
+            <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+        </div><!-- /.pull-right -->
     </form>
-</div>
+</div><!-- /.wrapper -->
 </body>
 </html>

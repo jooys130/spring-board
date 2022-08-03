@@ -31,10 +31,11 @@ public class BoardController {
         return "Post";
     }
 
-    @RequestMapping("/edit") // 이 주소로 접속하면 이 메소드를 호출한다.
-    public String editPost(Model model) throws Exception {
-        List<BoardDto> boardListDto = boardService.selectBoardList(); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
-        model.addAttribute("boardList", boardListDto);
+
+    @RequestMapping("/edit/{id}") // 이 주소로 접속하면 이 메소드를 호출한다.
+    public String editPost(@PathVariable int id, Model model) throws Exception {
+        BoardDto editDetailDto = boardService.selectPostDetail(id); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
+        model.addAttribute("editDetail", editDetailDto);
 
         return "EditPost";
     }

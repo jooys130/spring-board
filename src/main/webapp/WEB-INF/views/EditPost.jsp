@@ -40,42 +40,42 @@
 <header>
     <h1>게시판</h1>
 </header>
-<div class="container">
+<div id="wrapper" class="container">
     <form action="" method="post">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
-                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 상세</th>
+                <th colspan="6" style="background-color: #eeeeee; text-align: center">게시글 수정</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="boardList" items="${boardList}">
                 <tr>
                     <td>글 제목</td>
-                    <td colspan="3"><input style="width:100%; border:0;" value="${boardList.title}"></td>
+                    <td colspan="3"><input style="width:100%; border:0;" value="${editDetail.title}"></td>
                     <td>조회수</td>
-                    <td>${boardList.cnt}</td>
+                    <td>${editDetail.cnt}</td>
                 </tr>
                 <tr>
                     <td>작성자</td>
-                    <td>${boardList.author}</td>
+                    <td>${editDetail.author}</td>
                     <td >생성일시</td>
-                    <td>${boardList.insert_time}</td>
+                    <td>${editDetail.insert_time}</td>
                     <td >수정일자</td>
-                    <td>${boardList.update_time}</td>
+                    <td>${editDetail.update_time}</td>
                 </tr>
                 <tr>
                     <td>글 내용</td>
                     <td colspan="5"  style="height: 400px";>
-                        <textarea rows="20" style="width:100%; border:0; resize: none;">${boardList.context}</textarea>
+                        <textarea style="width:100%; border:0; resize: none;">${editDetail.context}</textarea>
                     </td>
                 </tr>
-            </c:forEach>
             </tbody>
         </table>
-        <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
-        <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary active" onclick="location.href='/post/${editDetail.id}';"> 저장 </button>
+            <button type="button" class="btn btn-default active" onclick="location.href='/post/${editDetail.id}';"> 취소 </button>
+        </div><!-- /.pull-right -->
     </form>
-</div>
+</div><!-- /.wrapper -->
 </body>
 </html>

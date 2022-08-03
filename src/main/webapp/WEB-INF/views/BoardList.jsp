@@ -66,7 +66,7 @@
         </c:forEach>
         </tbody>
     </table>
-</div>
+</div><!-- /.wrapper -->
 
 </body>
 </html>
