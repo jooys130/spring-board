@@ -25,4 +25,8 @@ public class BoardService {
     public void updatePost(BoardDto updatePostDto) throws Exception {
         boardMapper.updatePost(updatePostDto);
     }
+
+    public void deletePost(int id) throws Exception{
+        boardMapper.deletePost(id);
+    }
 }

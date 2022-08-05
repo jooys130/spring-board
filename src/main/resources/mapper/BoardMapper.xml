@@ -24,4 +24,9 @@
             update_time = NOW()
         WHERE id = #{id}
     </update>
+
+    <delete id="deletePost" parameterType="int">
+        DELETE from board
+        WHERE id = #{id}
+    </delete>
 </mapper>

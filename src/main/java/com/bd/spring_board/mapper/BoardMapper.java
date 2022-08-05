@@ -13,5 +13,7 @@ public interface BoardMapper {
     void insertNewPost(BoardDto newPostDto) throws Exception;
 
     void updatePost(BoardDto updatePostDto) throws Exception;
+
+    void deletePost(int id) throws Exception;
 }
 

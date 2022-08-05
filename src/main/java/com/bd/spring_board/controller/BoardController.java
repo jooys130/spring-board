@@ -73,5 +73,10 @@ public class BoardController {
 
         return "redirect:/boardlist";
     }
-    
+
+    @RequestMapping("/delete/{id}")
+    public String deletePost(@PathVariable int id) throws Exception{
+        boardService.deletePost(id);
+        return "redirect:/boardlist";
+    }
 }

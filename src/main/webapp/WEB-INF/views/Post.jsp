@@ -68,8 +68,18 @@
     <button type="button" class="btn btn-primary" onclick="location.href='/boardlist';"> 목록 </button>
     <div class="pull-right">
         <button type="button" class="btn btn-success" onclick="location.href='/edit/${postDetail.id}'"> 수정 </button>
-        <button type="button" class="btn btn-danger"> 삭제 </button>
+        <button type="button" class="btn btn-danger" onclick="deleteCheck()"> 삭제 </button>
     </div><!-- /.pull-right -->
 </div><!-- /.wrapper -->
+<script>
+    function deleteCheck() {
+        if (confirm("정말 삭제하시겠습니까??") === true){  //확인
+            window.location.href='/delete/${postDetail.id}';
+        }
+        else{ //취소
+            return false;
+        }
+    }
+</script>
 </body>
 </html>
