@@ -42,6 +42,18 @@ public class BoardController {
 
         return "EditPost";
     }
+    @RequestMapping("/update")
+    public String updatePost(HttpServletRequest request) throws Exception{
+        BoardDto updatePostDto = new BoardDto();
+
+        updatePostDto.setId(Integer.parseInt(request.getParameter("id")));
+        updatePostDto.setTitle(request.getParameter("title"));
+        updatePostDto.setContext(request.getParameter("context"));
+
+        boardService.updatePost(updatePostDto);
+
+        return "redirect:/post/" + request.getParameter("id");
+    }
 
     @GetMapping("/create")
     public String createPostView() throws Exception{ // 작성화면으로 넘어가는 메소드

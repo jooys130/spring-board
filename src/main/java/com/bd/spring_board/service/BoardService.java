@@ -21,4 +21,8 @@ public class BoardService {
     public void insertNewPost(BoardDto newPostDto) throws Exception {
         boardMapper.insertNewPost(newPostDto);
     }
+
+    public void updatePost(BoardDto updatePostDto) throws Exception {
+        boardMapper.updatePost(updatePostDto);
+    }
 }
