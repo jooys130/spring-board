@@ -40,7 +40,7 @@
     <h1>게시판</h1>
 </header>
 <div id="wrapper" class="container">
-    <form action="" method="post" onsubmit="return submitValid();">
+    <form action="" method="post">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
@@ -50,40 +50,21 @@
             <tbody>
                 <tr>
                     <td>글 제목</td>
-                    <td><input id="title" name="title" placeholder="제목을 입력하세요." style="width:100%; border:0;"></td>
+                    <td><input placeholder="제목을 입력하세요." style="width:100%; border:0;"></td>
                 </tr>
                 <tr>
                     <td>글 내용</td>
                     <td style="height: 400px";>
-                        <textarea id="context" name="context" placeholder="내용을 입력하세요." rows="20" style="width:100%; border:0; resize: none;"></textarea>
-            </td>
+                        <textarea placeholder="내용을 입력하세요." rows="20" style="width:100%; border:0; resize: none;"></textarea>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <div class="pull-right">
-            <input type="submit" class="btn btn-primary active" value="저장">
+            <button type="submit" class="btn btn-primary active" onclick="location.href='/boardlist';"> 저장 </button>
             <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
         </div><!-- /.pull-right -->
     </form>
 </div><!-- /.wrapper -->
-<script>
-    function submitValid() {
-        if (document.getElementById("title").value === '') {
-            alert("제목을 입력해주세요.");
-            return false;
-        }
-
-        else if (document.getElementById("context").value === '') {
-            alert("내용을 입력해주세요.");
-            return false;
-        }
-
-        else {
-            alert("저장되었습니다.");
-            window.location.href='/boardlist';
-        }
-    }
-</script>
 </body>
 </html>
-

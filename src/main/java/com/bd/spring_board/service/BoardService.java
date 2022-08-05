@@ -17,8 +17,4 @@ public class BoardService {
     public BoardDto selectPostDetail(int id) throws Exception {
         return boardMapper.selectPostDetail(id);
     }
-
-    public void insertNewPost(BoardDto newPostDto) throws Exception {
-        boardMapper.insertNewPost(newPostDto);
-    }
 }

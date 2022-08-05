@@ -9,7 +9,6 @@ public interface BoardMapper {
     List<BoardDto> selectBoardList() throws Exception;
 
     BoardDto selectPostDetail(int id) throws Exception;
-
-    void insertNewPost(BoardDto newPostDto) throws Exception;
+    
 }
 

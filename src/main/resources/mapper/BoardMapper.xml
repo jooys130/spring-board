@@ -10,9 +10,4 @@
     <select id="selectPostDetail" parameterType="int" resultType="com.bd.spring_board.model.BoardDto">
         SELECT * FROM board WHERE id = #{id}
     </select>
-
-    <insert id="insertNewPost" parameterType="com.bd.spring_board.model.BoardDto">
-        INSERT INTO board (title, author, context)
-        VALUES (#{title}, "admin", #{context})
-    </insert>
 </mapper>
