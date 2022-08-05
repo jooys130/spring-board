@@ -56,7 +56,7 @@
         <tbody>
         <c:forEach items="${boardList}" var="boardList">
             <tr onclick="location.href='post/${boardList.id}'">
-                <th scope="row">${boardList.id}</th>
+                <th scope="row" id="listNumber"></th>
                 <td>${boardList.title}</td>
                 <td>${boardList.author}</td>
                 <td>${boardList.insert_time}</td>
@@ -79,5 +79,11 @@
     #wrapper {
         margin-top: 20px;
         font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+    tbody>tr {
+        counter-increment: number;
+    }
+    tbody>tr>th:before {
+        content: counter(number);
     }
 </style>
