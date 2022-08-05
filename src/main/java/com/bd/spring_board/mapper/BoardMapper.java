@@ -11,5 +11,7 @@ public interface BoardMapper {
     BoardDto selectPostDetail(int id) throws Exception;
 
     void insertNewPost(BoardDto newPostDto) throws Exception;
+
+    void updatePost(BoardDto updatePostDto) throws Exception;
 }
 

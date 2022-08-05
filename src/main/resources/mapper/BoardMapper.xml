@@ -15,4 +15,13 @@
         INSERT INTO board (title, author, context)
         VALUES (#{title}, "admin", #{context})
     </insert>
+
+    <update id="updatePost" parameterType="com.bd.spring_board.model.BoardDto">
+        UPDATE board
+        SET
+            title = #{title},
+            context = #{context},
+            update_time = NOW()
+        WHERE id = #{id}
+    </update>
 </mapper>

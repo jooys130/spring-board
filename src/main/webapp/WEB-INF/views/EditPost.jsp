@@ -41,7 +41,7 @@
     <h1>게시판</h1>
 </header>
 <div id="wrapper" class="container">
-    <form action="" method="post">
+    <form action="/update" method="post" onsubmit="return submitValid();">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
@@ -51,7 +51,7 @@
             <tbody>
                 <tr>
                     <td>글 제목</td>
-                    <td colspan="3"><input style="width:100%; border:0;" value="${editDetail.title}"></td>
+                    <td colspan="3"><input id="title" name="title" style="width:100%; border:0;" value="${editDetail.title}"></td>
                     <td>조회수</td>
                     <td>${editDetail.cnt}</td>
                 </tr>
@@ -66,16 +66,35 @@
                 <tr>
                     <td>글 내용</td>
                     <td colspan="5"  style="height: 400px";>
-                        <textarea style="width:100%; border:0; resize: none;">${editDetail.context}</textarea>
+                        <textarea id="context" name="context" style="width:100%; border:0; resize: none;">${editDetail.context}</textarea>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <input type="hidden" name="id" value="${id}"/>
         <div class="pull-right">
-            <button type="submit" class="btn btn-primary active" onclick="location.href='/post/${editDetail.id}';"> 저장 </button>
+            <button type="submit" class="btn btn-primary active"> 저장 </button>
             <button type="button" class="btn btn-default active" onclick="location.href='/post/${editDetail.id}';"> 취소 </button>
         </div><!-- /.pull-right -->
     </form>
 </div><!-- /.wrapper -->
+<script>
+    function submitValid() {
+        if (document.getElementById("title").value === '') {
+            alert("제목을 입력해주세요.");
+            return false;
+        }
+
+        else if (document.getElementById("context").value === '') {
+            alert("내용을 입력해주세요.");
+            return false;
+        }
+
+        else {
+            alert("수정되었습니다.");
+        }
+    }
+</script>
+
 </body>
 </html>
