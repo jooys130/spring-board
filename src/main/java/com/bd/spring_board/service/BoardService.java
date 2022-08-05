@@ -17,12 +17,4 @@ public class BoardService {
     public BoardDto selectPostDetail(int id) throws Exception {
         return boardMapper.selectPostDetail(id);
     }
-
-    public void updatePost(BoardDto boardDto) throws Exception {
-        boardMapper.updatePost(boardDto);
-    }
-
-    public void deletePost(int id) throws Exception {
-        boardMapper.deletePost(id);
-    }
 }
