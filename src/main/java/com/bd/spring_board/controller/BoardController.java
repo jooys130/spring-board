@@ -14,11 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller // 해당 클래스를 컨트롤러로 동작하게 한다.
-@RequiredArgsConstructor // final이나 @NotNull 을 사용한 필드에 대한 생성자를 자동으로 생성해준다
+@RequiredArgsConstructor // final 이나 @NotNull 을 사용한 필드에 대한 생성자를 자동으로 생성해준다
 public class BoardController {
     private final BoardService boardService;
 
-    @RequestMapping("/boardlist") // 이 주소로 접속하면 이 메소드를 호출한다.
+    @RequestMapping("/boardList") // 이 주소로 접속하면 이 메소드를 호출한다.
     public String openBoardList(Model model) throws Exception {
         List<BoardDto> boardListDto = boardService.selectBoardList(); // Service를 호출하는 부분. Service의 반환값을 리스트에 저장
         model.addAttribute("boardList", boardListDto);
@@ -71,12 +71,12 @@ public class BoardController {
 
         boardService.insertNewPost(createPostDto);
 
-        return "redirect:/boardlist";
+        return "redirect:/boardList";
     }
 
     @RequestMapping("/delete/{id}")
     public String deletePost(@PathVariable int id) throws Exception{
         boardService.deletePost(id);
-        return "redirect:/boardlist";
+        return "redirect:/boardList";
     }
 }
