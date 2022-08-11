@@ -26,6 +26,20 @@
 </header>
 
 <div id="wrapper" class="container">
+    <div align="right">
+        <a> </a>
+        <div id="login" class="">
+            <button id="btnLogin">로그인</button>
+            <button id="btnJoin">회원가입</button> <p></p>
+        </div>
+
+        <div id="logout" class="hidden">
+            <a id="putUserId"></a>
+            <button id="btnLogout">로그아웃</button> <p></p>
+        </div>
+
+    </div>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
