@@ -62,7 +62,7 @@
         </table>
         <div class="pull-right">
             <input type="submit" class="btn btn-primary active" value="저장">
-            <button type="button" class="btn btn-default active" onclick="location.href='/boardlist';"> 취소 </button>
+            <button type="button" class="btn btn-default active" onclick="location.href='/boardList';"> 취소 </button>
         </div><!-- /.pull-right -->
     </form>
 </div><!-- /.wrapper -->
@@ -80,7 +80,7 @@
 
         else {
             alert("저장되었습니다.");
-            window.location.href='/boardlist';
+            window.location.href='/boardList';
         }
     }
 </script>
