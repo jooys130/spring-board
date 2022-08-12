@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bd.spring_board.mapper.UserMapper">
+    <insert id="insertNewUser" parameterType="com.bd.spring_board.model.UserDto">
+        INSERT INTO user (id, password, authorities, enabled)
+        VALUES (#{id}, #{password}, "USER", 1)
+    </insert>
+
+    <select id="getUserInfo" resultType="com.bd.spring_board.model.UserSecurityDto">
+        SELECT * FROM user WHERE user.id = #{id}
+    </select>
+
+</mapper>

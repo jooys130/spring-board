@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <!-- CSS only -->
@@ -35,17 +36,17 @@
     <h1>회원가입</h1>
 </header>
 <div id="wrapper" class="container">
-<form class="form-horizontal">
+<form class="form-horizontal" method="post" action="/joinPage">
     <div class="form-group">
         <label for="inputId" class="col-sm-2 control-label">Id</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputId" name="userId" placeholder="아이디">
+            <input type="text" class="form-control" id="inputId" name="id" placeholder="아이디">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword1" name="userPw" placeholder="비밀번호">
+            <input type="password" class="form-control" id="inputPassword1" name="password" placeholder="비밀번호">
         </div>
     </div>
     <div class="form-group">
