@@ -37,6 +37,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.7.1' // jdbc
     // Spring Boot 재기동 없이 jsp 코드 적용
     implementation 'org.springframework.boot:spring-boot-devtools'
+    // spring-boot-starter-security
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.7.2'
+    // spring-boot-starter-validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.2'
+    // spring-security-taglibs
+    implementation 'org.springframework.security:spring-security-taglibs:5.7.2'
+    // spring-security-core
+    implementation 'org.springframework.security:spring-security-core:5.7.2'
+    // spring-security-web
+    implementation 'org.springframework.security:spring-security-web:5.7.2'
+    // spring-security-config
+    implementation 'org.springframework.security:spring-security-config:5.7.2'
 
 }
 
