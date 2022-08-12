@@ -8,4 +8,8 @@
         VALUES (#{id}, #{password}, "USER", 1)
     </insert>
 
+    <select id="getUserInfo" resultType="com.bd.spring_board.model.UserSecurityDto">
+        SELECT * FROM user WHERE user.id = #{id}
+    </select>
+
 </mapper>

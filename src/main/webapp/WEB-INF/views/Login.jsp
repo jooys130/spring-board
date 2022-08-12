@@ -35,17 +35,17 @@
     <h1>로그인</h1>
 </header>
 <div id="wrapper" class="container">
-<form class="form-horizontal">
+<form class="form-horizontal" action="/loginPage" method="post">
     <div class="form-group">
         <label for="inputId" class="col-sm-2 control-label">Id</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputId" placeholder="아이디">
+            <input type="text" class="form-control" id="inputId" name=id placeholder="아이디">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="비밀번호">
+            <input type="password" class="form-control" id="inputPassword3" name=password placeholder="비밀번호">
         </div>
     </div>
     <div class="form-group">
