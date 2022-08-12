@@ -7,6 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
+<%
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+    String name = "";
+    if(auth.getPrincipal() != null) {
+        name = auth.getName();
+    }
+%>
 
 <html>
 <head>
@@ -26,19 +37,20 @@
 </header>
 
 <div id="wrapper" class="container">
-    <div align="right">
-        <a> </a>
-        <div id="login" class="">
-            <button id="btnLogin">로그인</button>
-            <button id="btnJoin" onclick="location.href='join'">회원가입</button> <p></p>
-        </div>
-
-        <div id="logout" class="hidden">
-            <a id="putUserId"></a>
-            <button id="btnLogout">로그아웃</button> <p></p>
-        </div>
-
+    <div class="container text-right">
+        <sec:authorize access="isAnonymous()">
+            <a href='<c:url value="/loginPage"/>' class="btn btn-info">LOGIN</a>
+            <button id="btnJoin" class="btn btn-info" onclick="location.href='/joinPage';" >JOIN</button>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+            <h5><%=name %>님, 반갑습니다.</h5>
+            <form action="/logoutPage" method="POST">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <button type="submit" class="btn btn-dark btn-sm">LOGOUT</button>
+            </form>
+        </sec:authorize>
     </div>
+    <br><br>
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
