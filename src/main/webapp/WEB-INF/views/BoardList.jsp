@@ -93,31 +93,6 @@
         </tbody>
     </table>
 </div><!-- /.wrapper -->
-<script>
-    const loginArea=document.getElementById("login");
-    const logoutArea=document.getElementById("logout");
-    const loginButton=document.getElementById("btnLogin");
-    const logoutButton=document.getElementById("btnLogout");
-    const usernameSpace=document.getElementById("putUserId");
-    const username= "username";
-
-    const HIDDEN_CLASSNAME= "hidden";
-
-    function loginProcess() {
-        loginArea.classList.add(HIDDEN_CLASSNAME);
-        logoutArea.classList.remove(HIDDEN_CLASSNAME);
-        usernameSpace.innerText = "안녕하세요 " +username+ "님! ";
-    }
-
-    function logoutProcess() {
-        logoutArea.classList.add(HIDDEN_CLASSNAME);
-        loginArea.classList.remove(HIDDEN_CLASSNAME);
-    }
-
-    loginButton.addEventListener("click", loginProcess);
-    logoutButton.addEventListener("click", logoutProcess);
-
-</script>
 </body>
 </html>
 <style>
@@ -135,8 +110,5 @@
     }
     tbody>tr>th:before {
         content: counter(number);
-    }
-    .hidden {
-        display: none;
     }
 </style>
