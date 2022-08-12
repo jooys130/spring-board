@@ -40,7 +40,7 @@
     <h1>게시판</h1>
 </header>
 <div id="wrapper" class="container">
-    <form action="" method="post" onsubmit="return submitValid();">
+    <form action="/create" method="post" onsubmit="return submitValid();">
         <table class="table" style="border : 1px solid #dddddd;">
             <thead>
             <tr>
