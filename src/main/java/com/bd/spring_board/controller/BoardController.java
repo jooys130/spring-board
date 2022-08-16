@@ -67,7 +67,7 @@ public class BoardController {
 
         createPostDto.setTitle(request.getParameter("title"));
         createPostDto.setContext(request.getParameter("context"));
-        createPostDto.setAuthor("admin");
+        createPostDto.setAuthor(request.getParameter("author"));
 
         boardService.insertNewPost(createPostDto);
 
