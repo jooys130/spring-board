@@ -4,7 +4,7 @@
 
 <mapper namespace="com.bd.spring_board.mapper.BoardMapper">
     <select id="selectBoardList" resultType="com.bd.spring_board.model.BoardDto">
-        SELECT * FROM board
+        SELECT * FROM board ORDER BY insert_time DESC
     </select>
 
     <select id="selectPostDetail" parameterType="int" resultType="com.bd.spring_board.model.BoardDto">
