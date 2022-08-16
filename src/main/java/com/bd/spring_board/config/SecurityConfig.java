@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll() // 나머지 모두 접근 가능
 
                 .and()
-                    .csrf().ignoringAntMatchers("/boardList", "/joinPage", "/loginPage", "/create") // CSRF 토큰 없이 실행하겠다.
+                    .csrf().ignoringAntMatchers("/boardList", "/joinPage", "/loginPage", "/create", "/update") // CSRF 토큰 없이 실행하겠다.
 
                 .and() // 로그인 설정
                     .formLogin()
