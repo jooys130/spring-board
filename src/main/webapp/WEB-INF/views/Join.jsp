@@ -57,7 +57,10 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">회원가입</button>
+            <button type="button" class="btn btn-info" onclick="location.href='/boardList';"> 목록 </button>
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">회원가입</button>
+            </div><!-- /.pull-right -->
         </div>
     </div>
 </form>
