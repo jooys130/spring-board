@@ -6,6 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
+<%
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+    String name = "";
+    if(auth.getPrincipal() != null) {
+        name = auth.getName();
+    }
+%>
 <html>
 <head>
     <!-- To ensure proper rendering and touch zooming-->
@@ -56,8 +67,10 @@
                     <td>글 내용</td>
                     <td style="height: 400px";>
                         <textarea id="context" name="context" placeholder="내용을 입력하세요." rows="20" style="width:100%; border:0; resize: none;"></textarea>
-            </td>
+                    </td>
+
                 </tr>
+            <input name="author" style="display: none" value=<%=name %>></input>
             </tbody>
         </table>
         <div class="pull-right">
