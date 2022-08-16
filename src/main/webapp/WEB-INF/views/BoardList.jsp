@@ -43,11 +43,13 @@
             <button id="btnJoin" class="btn btn-info" onclick="location.href='/joinPage';" >JOIN</button>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
-            <h5><%=name %>님, 반갑습니다.</h5>
+        <div style="display:inline;">
             <form action="/logoutPage" method="POST">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                <button type="submit" class="btn btn-dark btn-sm">LOGOUT</button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.tsoken}" />
+                <button style="float:right;" type="submit" class="btn btn-dark btn-sm">LOGOUT</button>
             </form>
+            <h5 style="float:right;"><%=name %>님, 반갑습니다.&nbsp;&nbsp;</h5>
+        </div>
         </sec:authorize>
     </div>
     <br><br>
