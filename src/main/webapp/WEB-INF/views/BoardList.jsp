@@ -45,7 +45,7 @@
         <sec:authorize access="isAuthenticated()">
         <div style="display:inline;">
             <form action="/logoutPage" method="POST">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.tsoken}" />
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <button style="float:right;" type="submit" class="btn btn-dark btn-sm">LOGOUT</button>
             </form>
             <h5 style="float:right;"><%=name %>님, 반갑습니다.&nbsp;&nbsp;</h5>
